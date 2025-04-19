@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom/client';
+/** @jsxImportSource react */
+import { useState, useEffect } from 'react';
 import './App.css';
 
 const App = () => {
