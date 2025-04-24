@@ -85,7 +85,7 @@ const App = () => {
           <h2 className="text-xl font-semibold border-b border-cyan-500 pb-1 mb-2">Experience</h2>
           <ul className="text-sm space-y-2">
             <li>
-              <strong>InnoBee</strong> – Junior Web Dev (Nov 2024 – Present)<br />Flask, MongoDB, React TypeScript
+              <strong>InnoBee</strong> – Junior Web Dev (Nov 2024 – Feb 2024)<br />Flask, MongoDB, React TypeScript
             </li>
             <li>
               <strong>Flazzy Clo</strong> – Full-Stack Dev (Sep 2024 – Present)<br />MERN stack, Stripe payments, Admin Panel
