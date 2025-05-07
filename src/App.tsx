@@ -1,6 +1,6 @@
-/** @jsxImportSource react */
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -24,7 +24,6 @@ const App = () => {
     return () => clearInterval(typeInterval);
   }, []);
 
-  // Apply dark mode class to the HTML element
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -98,22 +97,28 @@ const App = () => {
             </li>
           </ul>
         </div>
-<div className="flex justify-end pt-4">
-  <button
-    onClick={downloadCV}
-    className={`${
-      darkMode
-        ? 'bg-cyan-500 text-white hover:bg-cyan-700'
-        : 'bg-black text-white hover:bg-blue-700'
-    } px-6 py-2 rounded-md transition`}
-  >
-    Download CV
-  </button>
-</div>
+
+        {/* Download CV Button */}
+        <div className="flex justify-end pt-4">
+          <button
+            onClick={downloadCV}
+            className={`${
+              darkMode
+                ? 'bg-cyan-500 text-white hover:bg-cyan-700'
+                : 'bg-black text-white hover:bg-blue-700'
+            } px-6 py-2 rounded-md transition`}
+          >
+            Download CV
+          </button>
+        </div>
+
         {/* Footer */}
         <footer className={`text-center text-xs pt-6 border-t ${darkMode ? 'border-gray-700 text-gray-400' : 'border-blue-300 text-black'}`}>
           &copy; {new Date().getFullYear()} Shkelqim Osmani
         </footer>
+
+        {/* Vercel Analytics */}
+        <Analytics />
       </div>
     </div>
   );
