@@ -1,4 +1,5 @@
-Shkelqim Osmani — Personal Developer Portfolio
+Shkelqim Osmani 
+Personal Developer Portfolio
 Welcome to my personal portfolio website! This project showcases a collection of my software development projects, skills, and experiences, built to demonstrate my expertise as a Junior Web Developer.
 
 The portfolio is built with modern web technologies to provide a fast, responsive, and accessible experience.
