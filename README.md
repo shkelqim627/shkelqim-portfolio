@@ -1,54 +1,40 @@
-# React + TypeScript + Vite
+Shkelqim Osmani — Personal Developer Portfolio
+Welcome to my personal portfolio website! This project showcases a collection of my software development projects, skills, and experiences, built to demonstrate my expertise as a Junior Web Developer.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The portfolio is built with modern web technologies to provide a fast, responsive, and accessible experience.
 
-Currently, two official plugins are available:
+Technologies Used
+React with TypeScript for robust and type-safe UI development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Vite for lightning-fast build and development experience
 
-## Expanding the ESLint configuration
+Tailwind CSS for utility-first, responsive styling
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+React Router for smooth client-side navigation
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Framer Motion for subtle animations enhancing user interaction
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Features
+Clean, minimal design with light/dark mode support
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Responsive layout optimized for desktop and mobile
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Dynamic project showcase with detailed project pages
+
+Easy navigation and smooth transitions
+
+Modular, reusable components with maintainable codebase
+
+Getting Started
+Clone this repo, install dependencies, and start the development server:
+
+bash
+Copy
+Edit
+npm install
+npm run dev
+Visit http://localhost:5173 to see the portfolio locally.
+
+About Me
+I’m a passionate web developer eager to learn and grow. This portfolio represents my current skill set and ongoing projects as I prepare for professional opportunities.
+
