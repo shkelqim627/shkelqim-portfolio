@@ -9,8 +9,8 @@ const App = () => {
 
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/download.pdf';
-    link.download = 'Shkelqim_Osmani_CV.pdf';
+    link.href = '/Shkelqim-Osmani.pdf';
+    link.download = 'Shkelqim-Osmani.pdf';
     link.click();
   };
 
