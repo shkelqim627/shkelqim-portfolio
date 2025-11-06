@@ -5,4 +5,11 @@
   .bg-gradient-radial {
     background-image: radial-gradient(circle at center, #40c9a2, #2f80ed);
   }
+  
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
