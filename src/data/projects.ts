@@ -61,7 +61,7 @@ export const projects: Project[] = [
   {
     id: 'favours-portfolio',
     title: 'Favours Portfolio',
-    category: 'Full-Stack',
+    category: '',
     technologies: ['React', 'Node.js', 'EmailJS', 'Tailwind CSS'],
     description: 'Modern portfolio website with contact form integration. Built with React frontend and Node.js backend, featuring EmailJS for seamless communication.',
     fullDescription: 'Custom-developed portfolio built with React and Node.js to showcase modern web development skills. The site features a fully functional contact form powered by EmailJS for direct client communication.',
