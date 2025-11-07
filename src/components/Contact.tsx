@@ -227,9 +227,9 @@ const Contact = ({ darkMode }: ContactProps) => {
                 Tetovo, North Macedonia
               </p>
               <h4 className="font-bold mt-4 mb-2">💼 Availability</h4>
-              <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                Open to freelance projects and collaborations
-              </p>
+                <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    Open to any type of work opportunities.
+                </p>
             </div>
           </div>
         </div>

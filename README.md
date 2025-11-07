@@ -4,6 +4,7 @@ This document explains the refactored modular structure of the portfolio website
 
 ## 📁 Project Structure
 
+```text
 src/
 ├── components/ # Reusable UI components
 │ ├── Navbar.tsx # Navigation bar with routing & dark mode toggle
@@ -17,7 +18,7 @@ src/
 ├── pages/ # Page components
 │ ├── Home.tsx # Home page (all sections)
 │ ├── ProjectsPage.tsx # All projects page
-│ └── ProjectDetail.tsx# Individual project details
+│ └── ProjectDetail.tsx # Individual project details
 │
 ├── data/ # Data files
 │ └── projects.ts # Project data with interfaces
@@ -27,6 +28,7 @@ src/
 │
 ├── App.tsx # Main app with routing
 └── main.tsx # Entry point
+```
 
 
 
@@ -133,38 +135,31 @@ Example project structure:
   liveUrl: 'https://...',
   githubUrl: 'https://...'
 }
+```
 
-🎨 Styling
+## 🎨 Styling
 
-Tailwind CSS for all styling
+- Tailwind CSS for all styling
+- Dark mode support throughout
+- Consistent color scheme (yellow/orange accents)
+- Responsive design (mobile-first)
 
-Dark mode support throughout
+## 📱 Responsive Breakpoints
 
-Consistent color scheme (yellow/orange accents)
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
 
-Responsive design (mobile-first)
+## 🔄 State Management
 
-📱 Responsive Breakpoints
+- Dark mode state in App.tsx
+- Passed down via props
+- Persisted in DOM classes
+- No external state library needed
 
-Mobile: < 768px
+## 🧪 Development
 
-Tablet: 768px - 1024px
-
-Desktop: > 1024px
-
-🔄 State Management
-
-Dark mode state in App.tsx
-
-Passed down via props
-
-Persisted in DOM classes
-
-No external state library needed
-
-
-🧪 Development
-
+```bash
 # Install dependencies
 npm install
 
@@ -173,14 +168,11 @@ npm run dev
 
 # Build for production
 npm run build
+```
 
+## 📝 Notes
 
-📝 Notes
-
-Old monolithic code deleted
-
-All routes work with React Router
-
-Deep linking supported
-
-SEO-friendly structure
+- Old monolithic code deleted
+- All routes work with React Router
+- Deep linking supported
+- SEO-friendly structure

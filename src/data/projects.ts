@@ -19,7 +19,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'mobaxlux',
+    id: 'MobaxLux',
     title: 'MobaxLux',
     category: 'E-Commerce',
     technologies: ['WordPress', 'Elementor', 'PHP', 'SEO'],
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     liveUrl: 'https://mobaxlux.com/',
   },
   {
-    id: 'mini-cat-gallery',
+    id: 'Mini-cat-gallery',
     title: 'Mini Cat Gallery',
     category: 'Vue.js Gallery',
     technologies: ['Vue.js', 'RESTful API', 'State Management', 'CSS'],
@@ -59,8 +59,8 @@ export const projects: Project[] = [
     githubUrl: '#',
   },
   {
-    id: 'favours-portfolio',
-    title: 'Favours Portfolio',
+    id: 'Favours-portfolio',
+   title: 'Favour\'s Portfolio',
     category: '',
     technologies: ['React', 'Node.js', 'EmailJS', 'Tailwind CSS'],
     description: 'Modern portfolio website with contact form integration. Built with React frontend and Node.js backend, featuring EmailJS for seamless communication.',

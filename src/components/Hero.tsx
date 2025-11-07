@@ -45,12 +45,12 @@ const Hero = ({ darkMode }: HeroProps) => {
           <h2 className="text-3xl md:text-4xl font-semibold mb-8">
             I'm <span className="text-yellow-500">Shkelqim Osmani</span>
           </h2>
-          
-          <p className={`mb-8 leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            I'm a 19-year-old full-stack developer from Tetovo, North Macedonia. 
-            I create dynamic, user-centered web applications with modern technologies. 
-            Passionate about clean code, responsive design, and bringing ideas to life through technology.
-          </p>
+
+            <p className={`mb-8 leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                I'm a full-stack developer from Tetovo, North Macedonia.
+                I create dynamic, user-centered web applications using modern technologies.
+                Passionate about clean code, responsive design, and bringing ideas to life through technology.
+            </p>
 
           <div className="flex justify-center md:justify-start gap-6 mb-8">
             <a

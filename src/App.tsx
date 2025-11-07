@@ -6,6 +6,7 @@ import './App.css';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 
 import Home from './pages/Home';
@@ -34,6 +35,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className={`${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} min-h-screen transition-colors duration-300`}>
         <Navbar 
           darkMode={darkMode} 
