@@ -23,9 +23,9 @@ const Education = ({ darkMode }: EducationProps) => {
               <div className={`${darkMode ? 'bg-gray-900' : 'bg-white'} p-6 rounded-lg shadow-md`}>
                 <p className="text-sm text-gray-500 mb-2">Nov 2024 – Feb 2025</p>
                 <h3 className="text-xl font-bold mb-2">Junior Web Developer</h3>
-                <p className={`font-medium mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                <a href="https://innobee.buzz/" className={`font-medium mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                   InnoBee, Netherlands (Remote)
-                </p>
+                </a>
                 <ul className={`list-disc list-outside ml-5 space-y-2 text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                   <li>Designed and implemented UI/UX for 30% of the app interfaces</li>
                   <li>Refactored legacy code to enhance maintainability and reduce bugs by 30%</li>
@@ -35,9 +35,9 @@ const Education = ({ darkMode }: EducationProps) => {
               <div className={`${darkMode ? 'bg-gray-900' : 'bg-white'} p-6 rounded-lg shadow-md`}>
                 <p className="text-sm text-gray-500 mb-2">Jan 2022 – Oct 2022</p>
                 <h3 className="text-xl font-bold mb-2">Full Stack Developer Intern</h3>
-                <p className={`font-medium mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                <a href="https://client.destination.as/" className={`font-medium mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                   Hexbold, Tetovo
-                </p>
+                </a>
                 <ul className={`list-disc list-outside ml-5 space-y-2 text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                   <li>Built Angular frontends and ASP.NET Core backends for client projects, improving user task completion rate by 40%</li>
                   <li>Integrated third-party APIs and styled applications with Tailwind CSS for consistency and responsiveness</li>

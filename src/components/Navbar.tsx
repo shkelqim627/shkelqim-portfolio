@@ -75,7 +75,7 @@ const Navbar = ({ darkMode, setDarkMode, activeSection = 'home', scrollToSection
                   to="/#contact"
                   className={darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'}
                 >
-                  Blog
+                  Contact
                 </Link>
               )}
             </li>
