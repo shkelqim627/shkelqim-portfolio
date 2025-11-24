@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react";
 import './App.css';
@@ -9,9 +9,9 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
 
-import Home from './pages/Home';
-import ProjectsPage from './pages/ProjectsPage';
-import ProjectDetail from './pages/ProjectDetail';
+const Home = lazy(() => import('./pages/Home'));
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -44,20 +44,26 @@ const App = () => {
           scrollToSection={scrollToSection}
         />
         
-        <Routes>
-          <Route 
-            path="/" 
-            element={<Home darkMode={darkMode} setActiveSection={setActiveSection} />} 
-          />
-          <Route 
-            path="/projects" 
-            element={<ProjectsPage darkMode={darkMode} />} 
-          />
-          <Route 
-            path="/projects/:id" 
-            element={<ProjectDetail darkMode={darkMode} />} 
-          />
-        </Routes>
+        <Suspense fallback={
+          <div className="flex items-center justify-center min-h-[60vh]">
+            <div className="w-12 h-12 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        }>
+          <Routes>
+            <Route 
+              path="/" 
+              element={<Home darkMode={darkMode} setActiveSection={setActiveSection} />} 
+            />
+            <Route 
+              path="/projects" 
+              element={<ProjectsPage darkMode={darkMode} />} 
+            />
+            <Route 
+              path="/projects/:id" 
+              element={<ProjectDetail darkMode={darkMode} />} 
+            />
+          </Routes>
+        </Suspense>
 
         <Footer darkMode={darkMode} />
         
