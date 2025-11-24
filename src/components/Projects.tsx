@@ -27,6 +27,8 @@ const Projects = ({ darkMode, limit = 3 }: ProjectsProps) => {
                 <img 
                   src={project.image} 
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
               </div>
