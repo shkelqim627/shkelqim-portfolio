@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
+import { useNavigate } from "react-router-dom";
 
 interface ProjectsProps {
   darkMode: boolean;
@@ -8,14 +9,18 @@ interface ProjectsProps {
 
 const Projects = ({ darkMode, limit = 3 }: ProjectsProps) => {
   const displayProjects = projects.slice(0, limit);
+    const navigate = useNavigate();
 
+    function gotoProjects() {
+        navigate("/projects");
+    }
   return (
     <section id="portfolio" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-16">
           [ My Work ]
         </h2>
-        
+        <button>asdsadsa1</button>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayProjects.map((project) => (
             <Link
@@ -47,17 +52,18 @@ const Projects = ({ darkMode, limit = 3 }: ProjectsProps) => {
             </Link>
           ))}
         </div>
+          <div className="flex flex-col justify-center items-center w-full">
 
-        {limit && limit < projects.length && (
-          <div className="text-center mt-12">
-            <Link
-              to="/projects"
-              className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-shadow inline-block"
-            >
-              Show All Works
-            </Link>
+
+          <button
+              onClick={gotoProjects}
+              className="mt-10 w-52 h-14 inline-flex cursor-pointer bg-yellow-500 items-center justify-center px-3 py-3 rounded-full font-semibold text-lg  border-0 transition-all"
+          >
+              View All Projects
+          </button>
           </div>
-        )}
+
+
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ interface EducationProps {
 
 const Education = ({ darkMode }: EducationProps) => {
   return (
-    <section id="contact" className={`${darkMode ? 'bg-gray-800' : 'bg-gray-50'} py-20 transition-colors duration-300`}>
+    <section id="education" className={`${darkMode ? 'bg-gray-800' : 'bg-gray-50'} py-20 transition-colors duration-300`}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
@@ -32,10 +32,14 @@ const Education = ({ darkMode }: EducationProps) => {
                   <li>Participated in Agile sprints, debugging, and testing cycles to improve delivery efficiency</li>
                 </ul>
               </div>
-              <div className={`${darkMode ? 'bg-gray-900' : 'bg-white'} p-6 rounded-lg shadow-md`}>
+              <div className={`${darkMode ? 'bg-gray-900' : 'bg-white'} p-6 rounded-lg shadow-md flex flex-col`}>
                 <p className="text-sm text-gray-500 mb-2">Jan 2022 – Oct 2022</p>
                 <h3 className="text-xl font-bold mb-2">Full Stack Developer Intern</h3>
-                <a href="https://client.destination.as/" className={`font-medium mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <a href="https://client.destination.as/" className={`font-medium mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                      client.destination.as
+                  </a>
+
+                  <a href="https://client.destination.as/" className={`font-medium mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                   Hexbold, Tetovo
                 </a>
                 <ul className={`list-disc list-outside ml-5 space-y-2 text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>

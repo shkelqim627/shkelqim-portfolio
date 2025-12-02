@@ -70,7 +70,7 @@ const Contact = ({ darkMode }: ContactProps) => {
   };
 
   return (
-    <section className="py-20">
+    <section id="contact" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-8">[ Contact ]</h2>
         <p className={`text-lg text-center mb-12 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
