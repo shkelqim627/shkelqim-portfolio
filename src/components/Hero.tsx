@@ -17,16 +17,12 @@ const Hero = ({ darkMode }: HeroProps) => {
 
     const timeout = setTimeout(() => {
       if (!isDeleting && typedText === fullText) {
-        // Pause before starting to delete
         setTimeout(() => setIsDeleting(true), pauseBeforeDelete);
       } else if (isDeleting && typedText === '') {
-        // Pause before starting to type again
         setTimeout(() => setIsDeleting(false), pauseBeforeType);
       } else if (isDeleting) {
-        // Delete one character
         setTypedText(fullText.substring(0, typedText.length - 1));
       } else {
-        // Type one character
         setTypedText(fullText.substring(0, typedText.length + 1));
       }
     }, typingSpeed);
