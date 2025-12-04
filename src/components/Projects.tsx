@@ -18,9 +18,8 @@ const Projects = ({ darkMode, limit = 3 }: ProjectsProps) => {
     <section id="portfolio" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-16">
-          [ My Work ]
+          Projects
         </h2>
-        <button>asdsadsa1</button>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayProjects.map((project) => (
             <Link

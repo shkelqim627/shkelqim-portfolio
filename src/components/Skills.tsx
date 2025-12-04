@@ -39,7 +39,7 @@ const Skills = ({ darkMode }: SkillsProps) => {
     <section id="about" className={`${darkMode ? 'bg-gray-800' : 'bg-gray-50'} py-20 transition-colors duration-300`}>
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-16">
-          [ My Skills ]
+           My Skills
         </h2>
         
         <div className="grid md:grid-cols-2 gap-12 mb-16">
@@ -69,7 +69,7 @@ const Skills = ({ darkMode }: SkillsProps) => {
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold mb-8 text-center">[ Skills ]</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center"> Skills </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {skills.map((skill) => {
               const IconComponent = skill.icon;
