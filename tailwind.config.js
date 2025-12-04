@@ -7,6 +7,7 @@ export default {
         extend: {
             fontFamily: {
                 poppins: ['Poppins', 'sans-serif'],
+                calligraphy: ['Mrs Saint Delafield', 'cursive']
             },
         },
     },

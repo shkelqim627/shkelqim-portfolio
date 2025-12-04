@@ -21,7 +21,9 @@ const Navbar = ({ darkMode, setDarkMode, activeSection = 'home', scrollToSection
         <header className={`${darkMode ? 'bg-gray-800' : 'bg-white'} fixed top-0 left-0 right-0 z-50 shadow-sm transition-colors duration-300`}>
             <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
                 <div className="text-xl font-semibold">
-                    <Link to="/" className={darkMode ? 'text-white' : 'text-gray-900'}>
+                    <Link
+                        to="/"
+                        className={`${darkMode ? 'text-white' : 'text-gray-900'} font-['Mrs_Saint_Delafield',cursive] text-2xl md:text-3xl`}                    >
                         Shkelqim
                     </Link>
                 </div>
