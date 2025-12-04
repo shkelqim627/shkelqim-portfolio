@@ -8,7 +8,7 @@ const Education = ({ darkMode }: EducationProps) => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-3xl font-bold mb-8">[ Education ]</h2>
+            <h2 className="text-3xl font-bold mb-8"> Education </h2>
             <div className={`${darkMode ? 'bg-gray-900' : 'bg-white'} p-6 rounded-lg shadow-md`}>
               <p className="text-sm text-gray-500 mb-2">2021 – 2025</p>
               <h3 className="text-xl font-bold mb-2">High School Diploma</h3>
@@ -18,7 +18,7 @@ const Education = ({ darkMode }: EducationProps) => {
             </div>
           </div>
           <div>
-            <h2 className="text-3xl font-bold mb-8">[ Experience ]</h2>
+            <h2 className="text-3xl font-bold mb-8"> Experience </h2>
             <div className="space-y-6">
               <div className={`${darkMode ? 'bg-gray-900' : 'bg-white'} p-6 rounded-lg shadow-md`}>
                 <p className="text-sm text-gray-500 mb-2">Nov 2024 – Feb 2025</p>

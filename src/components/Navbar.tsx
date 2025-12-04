@@ -83,7 +83,9 @@ const Navbar = ({ darkMode, setDarkMode, activeSection = 'home', scrollToSection
                         className={`${darkMode ? 'bg-gray-700' : 'bg-gray-200'} relative w-14 h-7 rounded-full transition-colors duration-300`}
                         aria-label="Toggle dark mode"
                     >
-                        <div className={`${darkMode ? 'translate-x-7' : 'translate-x-1'} absolute top-1 left-0 w-5 h-5 bg-white rounded-full transition-transform duration-300 flex items-center justify-center`}>
+                        <div
+                            className={`${darkMode ? 'translate-x-1' : 'translate-x-7'} absolute top-1 left-0 w-5 h-5 bg-white rounded-full transition-transform duration-300 flex items-center justify-center`}
+                        >
                             {darkMode ? (
                                 <svg className="w-3 h-3 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
