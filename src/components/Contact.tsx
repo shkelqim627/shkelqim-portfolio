@@ -16,10 +16,9 @@ const Contact = ({ darkMode }: ContactProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  // Replace these with your EmailJS credentials
   const SERVICE_ID = 'service_34ew2qs';
-  const TEMPLATE_ID = 'template_ue523ps'; // Template for notification to you
-  const AUTO_REPLY_TEMPLATE_ID = 'template_kxg07gl'; // Optional: Template for auto-reply to sender
+  const TEMPLATE_ID = 'template_ue523ps';
+  const AUTO_REPLY_TEMPLATE_ID = 'template_kxg07gl';
   const PUBLIC_KEY = 'jNlyL9liP6dwiUwX3';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -35,7 +34,6 @@ const Contact = ({ darkMode }: ContactProps) => {
     setSubmitStatus('idle');
 
     try {
-      // Send notification to you
       await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
@@ -43,7 +41,6 @@ const Contact = ({ darkMode }: ContactProps) => {
         PUBLIC_KEY
       );
 
-      // Send auto-reply to sender
       await emailjs.send(
         SERVICE_ID,
         AUTO_REPLY_TEMPLATE_ID,
