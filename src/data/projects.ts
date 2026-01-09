@@ -1,6 +1,7 @@
 import mobaxluxImg from '../assets/3.png';
 import catGalleryImg from '../assets/1.png';
 import favoursImg from '../assets/2.png';
+import proArmingImg from '../assets/4.png';
 
 export interface Project {
   id: string;
@@ -77,6 +78,31 @@ export const projects: Project[] = [
     gradient: 'from-blue-400 to-cyan-500',
     image: favoursImg,
     liveUrl: 'https://favour-personal-site.vercel.app/',
+    githubUrl: '#',
+  },
+  {
+    id: 'Pro-Arming',
+    title: 'Pro Arming',
+    category: 'Construction Services',
+    technologies: ['React', 'Vite', 'Tailwind CSS', 'Cloudinary', 'EmailJS', 'Framer Motion', 'React-i18next'],
+    description: 'Multi-language construction services website with advanced animations, contact forms, and professional portfolio showcase for Pro Arming company.',
+    fullDescription: 'A comprehensive, multi-language website for Pro Arming, a leading construction company specializing in armir services for residential and commercial projects in Tetovo and surrounding regions. The website features advanced animations, interactive galleries, and a fully functional contact system with EmailJS integration.',
+    impact: 'Successfully launched a professional web presence that effectively showcases the company\'s expertise with over 2 years of experience and 50+ completed projects, resulting in increased client inquiries and engagement.',
+    features: [
+      'Multi-language support (Albanian/English/Macedonian) with React-i18next',
+      'Advanced animations and transitions using Framer Motion',
+      'Fully functional contact form with EmailJS integration',
+      'Interactive project gallery with lightbox functionality',
+      'Mobile-first responsive design optimized for all devices',
+      'Fast loading with Vite build optimization and lazy loading',
+      'SEO-optimized with meta tags and structured data',
+      'Professional service presentation with animated counters',
+      'Client testimonials carousel with smooth transitions',
+      'Modern UI with glassmorphism effects and gradients'
+    ],
+    gradient: 'from-orange-400 to-red-500',
+    image: proArmingImg,
+    liveUrl: 'https://pro-arming.vercel.app/',
     githubUrl: '#',
   },
 ];

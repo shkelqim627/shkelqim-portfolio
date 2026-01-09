@@ -38,7 +38,7 @@ const Home = ({ darkMode, setActiveSection }: HomeProps) => {
     <main className="pt-20">
       <Hero darkMode={darkMode} />
       <Skills darkMode={darkMode} />
-      <Projects darkMode={darkMode} limit={3} />
+      <Projects darkMode={darkMode} limit={4} />
       <Education darkMode={darkMode} />
       <Contact darkMode={darkMode} />
     </main>
