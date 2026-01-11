@@ -1,68 +1,57 @@
-import { Link } from 'react-router-dom';
-import { projects } from '../data/projects';
 import { useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion';
+import { projects } from '../data/projects';
+import ProjectCard3D from './ProjectCard3D';
 
 interface ProjectsProps {
-  darkMode: boolean;
   limit?: number;
 }
 
-const Projects = ({ darkMode, limit = 3 }: ProjectsProps) => {
+const Projects = ({ limit = 3 }: ProjectsProps) => {
   const displayProjects = projects.slice(0, limit);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    function gotoProjects() {
-        navigate("/projects");
-    }
+  function gotoProjects() {
+    navigate("/projects");
+  }
+  
   return (
-    <section id="portfolio" className="py-20">
+    <section id="portfolio" className="py-20 bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-16">
+        <motion.h2 
+          className="text-4xl font-bold text-center mb-16 font-sora text-white"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           Projects
-        </h2>
+        </motion.h2>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {displayProjects.map((project) => (
-            <Link
-              key={project.id}
-              to={`/projects/${project.id}`}
-              className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl overflow-hidden shadow-xl transition-transform hover:scale-105`}
-            >
-              <div className="h-48 overflow-hidden bg-gray-100 dark:bg-gray-900">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className={`text-sm mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                  {project.technologies.join(' • ')}
-                </p>
-                <p className={`text-sm mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  {project.description}
-                </p>
-                <span className="text-yellow-500 hover:text-yellow-600 font-medium text-sm">
-                  View Details →
-                </span>
-              </div>
-            </Link>
+          {displayProjects.map((project, index) => (
+            <ProjectCard3D 
+              key={project.id} 
+              project={project} 
+              index={index}
+            />
           ))}
         </div>
-          <div className="flex flex-col justify-center items-center w-full">
-
-
-          <button
-              onClick={gotoProjects}
-              className="mt-10 w-52 h-14 inline-flex cursor-pointer bg-yellow-500 items-center justify-center px-3 py-3 rounded-full font-semibold text-lg  border-0 transition-all"
+        
+        <div className="flex flex-col justify-center items-center w-full">
+          <motion.button
+            onClick={gotoProjects}
+            className="mt-10 w-52 h-14 inline-flex cursor-pointer bg-purple-600 text-white items-center justify-center px-3 py-3 rounded-full font-semibold text-lg border-0 transition-all hover:bg-purple-700 font-inter"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05, rotate: 2 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
           >
-              View All Projects
-          </button>
-          </div>
-
-
+            View All Projects
+          </motion.button>
+        </div>
       </div>
     </section>
   );
