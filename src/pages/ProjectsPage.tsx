@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 
 interface ProjectsPageProps {
@@ -19,9 +18,8 @@ const ProjectsPage = ({ darkMode }: ProjectsPageProps) => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {projects.map((project) => (
-              <Link
+              <div
                 key={project.id}
-                to={`/projects/${project.id}`}
                 className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl overflow-hidden shadow-xl transition-transform hover:scale-105`}
               >
                 <div className="h-48 overflow-hidden bg-gray-100 dark:bg-gray-900">
@@ -43,7 +41,7 @@ const ProjectsPage = ({ darkMode }: ProjectsPageProps) => {
                     View Details →
                   </span>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
