@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 const Home = lazy(() => import('./pages/Home'));
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-900">
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         
         <main>

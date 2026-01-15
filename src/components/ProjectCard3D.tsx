@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Project } from '../data/projects'
 
 interface ProjectCard3DProps {
@@ -11,6 +11,11 @@ interface ProjectCard3DProps {
 export default function ProjectCard3D({ project, index }: ProjectCard3DProps) {
   const [isHovered, setIsHovered] = useState(false)
   const cardRef = useRef<HTMLDivElement>(null)
+  const navigate = useNavigate()
+
+  const handleCardClick = () => {
+    navigate(`/projects/${project.id}`)
+  }
 
   return (
     <motion.div
@@ -19,27 +24,17 @@ export default function ProjectCard3D({ project, index }: ProjectCard3DProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{
-        y: -10,
-        rotateX: 5,
-        rotateY: 5,
-        scale: 1.05,
+        y: -5,
+        scale: 1.02,
         transition: { duration: 0.3 }
       }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      style={{
-        transformStyle: 'preserve-3d',
-        perspective: '1000px'
-      }}
       className="relative"
     >
-      <Link
-        to={`/projects/${project.id}`}
-        className="block bg-gray-800 rounded-2xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:border-purple-500"
-        style={{
-          transform: isHovered ? 'rotateY(5deg) rotateX(-5deg)' : 'rotateY(0deg) rotateX(0deg)',
-          transformStyle: 'preserve-3d'
-        }}
+      <div
+        onClick={handleCardClick}
+        className="block bg-gray-800 rounded-2xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-300 hover:shadow-2xl hover:border-purple-500 cursor-pointer h-[500px] flex flex-col"
       >
         {/* Card Front */}
         <div className="relative h-48 overflow-hidden bg-gray-700">
@@ -84,7 +79,7 @@ export default function ProjectCard3D({ project, index }: ProjectCard3DProps) {
         </div>
         
         <motion.div 
-          className="p-6"
+          className="p-6 flex-1 flex flex-col"
           animate={{
             y: isHovered ? -5 : 0
           }}
@@ -111,7 +106,7 @@ export default function ProjectCard3D({ project, index }: ProjectCard3DProps) {
           </motion.p>
           
           <motion.p 
-            className="text-sm mb-4 text-gray-300 font-inter"
+            className="text-sm mb-4 text-gray-300 font-inter flex-1 line-clamp-3"
             animate={{
               opacity: isHovered ? 0.9 : 1
             }}
@@ -120,27 +115,20 @@ export default function ProjectCard3D({ project, index }: ProjectCard3DProps) {
             {project.description}
           </motion.p>
           
-          <motion.span 
-            className="text-purple-400 hover:text-purple-300 font-medium text-sm font-inter inline-flex items-center gap-1"
-            animate={{
-              x: isHovered ? 5 : 0
-            }}
-            transition={{ duration: 0.3 }}
+          <button
+            onClick={handleCardClick}
+            className="text-purple-400 hover:text-purple-300 font-medium text-sm font-inter inline-flex items-center gap-1 bg-transparent border-none cursor-pointer"
           >
             View Details 
-            <motion.svg 
+            <svg 
               className="w-4 h-4" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
-              animate={{
-                x: isHovered ? 3 : 0
-              }}
-              transition={{ duration: 0.3 }}
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </motion.svg>
-          </motion.span>
+            </svg>
+          </button>
         </motion.div>
         
         {/* 3D Shadow Effect */}
@@ -151,7 +139,7 @@ export default function ProjectCard3D({ project, index }: ProjectCard3DProps) {
           }}
           transition={{ duration: 0.3 }}
         />
-      </Link>
+      </div>
     </motion.div>
   )
 }
