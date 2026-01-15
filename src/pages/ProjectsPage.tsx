@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { projects } from '../data/projects';
 import ProjectCard3D from '../components/ProjectCard3D';
 
@@ -26,15 +24,31 @@ const ProjectsPage = () => {
           </motion.p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {projects.map((project, index) => (
-              <motion.div
+            {projects.map((project) => (
+              <div
                 key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl overflow-hidden shadow-xl transition-transform hover:scale-105`}
               >
-                <ProjectCard3D project={project} index={index} />
-              </motion.div>
+                <div className="h-48 overflow-hidden bg-gray-100 dark:bg-gray-900">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <p className={`text-sm mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    {project.technologies.join(' • ')}
+                  </p>
+                  <p className={`text-sm mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    {project.description}
+                  </p>
+                  <span className="text-yellow-500 hover:text-yellow-600 font-medium text-sm">
+                    View Details →
+                  </span>
+                </div>
+              </div>
             ))}
           </div>
         </div>
