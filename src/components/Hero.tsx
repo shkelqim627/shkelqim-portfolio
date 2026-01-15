@@ -48,7 +48,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
-                href="../../public/Shkelqim-Osmani.pdf"
+                href="/Shkelqim-Osmani.pdf"
                 download="Shkelqim_Osmani_CV.pdf"
                 className="inline-flex items-center justify-center px-8 py-3 bg-purple-600 text-white rounded-full font-semibold hover:bg-purple-700 transition-all font-inter"
             >
