@@ -1,7 +1,7 @@
 import mobaxluxImg from '../assets/3.png';
 import catGalleryImg from '../assets/1.png';
 import favoursImg from '../assets/2.png';
-import proArmingImg from '../assets/4.png';
+// import proArmingImg from '../assets/4.png';
 
 export interface Project {
   id: string;
