@@ -1,104 +1,103 @@
 import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import AnimatedNavLink from './AnimatedNavLink';
+import signatureImage from '../assets/signature.png';
 
-interface NavbarProps {
-    darkMode: boolean;
-    setDarkMode: (value: boolean) => void;
-    activeSection?: string;
-    scrollToSection?: (id: string) => void;
-}
-
-const Navbar = ({ darkMode, setDarkMode, activeSection = 'home', scrollToSection }: NavbarProps) => {
+const Navbar = () => {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
 
-    const handleNavClick = (id: string) => {
-        if (isHomePage && scrollToSection) {
-            scrollToSection(id);
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
     };
 
     return (
-        <header className={`${darkMode ? 'bg-gray-800' : 'bg-white'} fixed top-0 left-0 right-0 z-50 shadow-sm transition-colors duration-300`}>
+        <header className="bg-gray-900/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-gray-800 transition-all duration-300">
             <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-                <div className="text-xl font-semibold">
+                <motion.div 
+                    className="text-xl font-semibold"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                >
                     <Link
                         to="/"
-                        className={`${darkMode ? 'text-white' : 'text-gray-900'} font-['Mrs_Saint_Delafield',cursive] text-2xl md:text-3xl`}                    >
-                        Shkelqim
+                        className="flex items-center hover:opacity-100 transition-opacity"
+                    >
+                        <img 
+                            src={signatureImage} 
+                            alt="Shkelqim" 
+                            className="h-8 w-auto invert filter brightness-100 hover:brightness-110 transition-all"
+                        />
                     </Link>
-                </div>
+                </motion.div>
 
                 <div className="flex items-center gap-8">
-                    <ul className="hidden md:flex gap-8 text-sm">
+                    {/* Desktop navigation */}
+                    <ul className="hidden md:flex gap-8 text-sm font-inter">
                         <li>
-                            <Link
+                            <AnimatedNavLink
                                 to="/"
-                                onClick={() => handleNavClick('home')}
-                                className={`${isHomePage && activeSection === 'home' ? 'text-yellow-500 cursor-pointer' : darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'} transition-colors`}
+                                isActive={isHomePage}
                             >
                                 Home
-                            </Link>
+                            </AnimatedNavLink>
                         </li>
-                        {isHomePage && (
-                            <li>
-                                <button
-                                    onClick={() => handleNavClick('about')}
-                                    className={`${activeSection === 'about' ? 'text-yellow-500 cursor-pointer' : darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900 cursor-pointer'} transition-colors`}
-                                >
-                                    About Me
-                                </button>
-                            </li>
-                        )}
 
                         <li>
-                            <Link
+                            <AnimatedNavLink
                                 to="/projects"
-                                className={`${location.pathname === '/projects' ? 'text-yellow-500 cursor-pointer' : darkMode ? 'text-gray-300 hover:text-white cursor-pointer' : 'text-gray-700 hover:text-gray-900 cursor-pointers'} transition-colors`}
+                                isActive={location.pathname === '/projects'}
                             >
                                 Portfolio
-                            </Link>
+                            </AnimatedNavLink>
                         </li>
-                        <li>
                         {isHomePage && (
-                                <button
-                                    onClick={() => handleNavClick('education')}
-                                    className={`${activeSection === 'education' ? 'text-yellow-500 cursor-pointer ' : darkMode ? 'text-gray-300 hover:text-white cursor-pointer' : 'text-gray-700 hover:text-gray-900 cursor-pointer'} transition-colors`}
-                                >
-                                    Experience
-                                </button>
+                            <>
+                                <li>
+                                    <AnimatedNavLink
+                                        to="#about"
+                                        onClick={() => scrollToSection('about')}
+                                    >
+                                        About
+                                    </AnimatedNavLink>
+                                </li>
+                                <li>
+                                    <AnimatedNavLink
+                                        to="#education"
+                                        onClick={() => scrollToSection('education')}
+                                    >
+                                        Experience
+                                    </AnimatedNavLink>
+                                </li>
+                                <li>
+                                    <AnimatedNavLink
+                                        to="#contact"
+                                        onClick={() => scrollToSection('contact')}
+                                    >
+                                        Contact
+                                    </AnimatedNavLink>
+                                </li>
+                            </>
                         )}
-                        </li>
+                    </ul>
+                    
+                    {/* Mobile navigation - only show Projects */}
+                    <ul className="md:hidden text-sm font-inter">
                         <li>
-                            {isHomePage && (
-                                <button
-                                    onClick={() => handleNavClick('contact')}
-                                    className={`${activeSection === 'contact' ? 'text-yellow-500 cursor-pointer ' : darkMode ? 'text-gray-300 hover:text-white cursor-pointer' : 'text-gray-700 hover:text-gray-900 cursor-pointer'} transition-colors`}
-                                >
-                                    Contact
-                                </button>
-                            )}
+                            <AnimatedNavLink
+                                to="/projects"
+                                isActive={location.pathname === '/projects'}
+                            >
+                                Portfolio
+                            </AnimatedNavLink>
                         </li>
                     </ul>
-
-                    <button
-                        onClick={() => setDarkMode(!darkMode)}
-                        className={`${darkMode ? 'bg-gray-700' : 'bg-gray-200'} relative w-14 h-7 rounded-full transition-colors duration-300`}
-                        aria-label="Toggle dark mode"
-                    >
-                        <div
-                            className={`${darkMode ? 'translate-x-1' : 'translate-x-7'} absolute top-1 left-0 w-5 h-5 bg-white rounded-full transition-transform duration-300 flex items-center justify-center`}
-                        >
-                            {darkMode ? (
-                                <svg className="w-3 h-3 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                                </svg>
-                            ) : (
-                                <svg className="w-3 h-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
-                                </svg>
-                            )}
-                        </div>
-                    </button>
                 </div>
             </nav>
         </header>
